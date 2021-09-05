@@ -1,6 +1,6 @@
 app-id: se.emijoh.mpw
 runtime: org.gnome.Platform
-runtime-version: '3.38'
+runtime-version: '40'
 sdk: org.gnome.Sdk
 command: mpwcli.py
 modules:
@@ -11,8 +11,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/emiljoha/mpw.git
-        tag: v2021.02.13
-        commit: d64dfb237ce1e77c30babceceec55f97cb67ca03
+        tag: v2021.9.5
+        commit: 130b4a7d6c5f7096458bf81600bfcdccf01aa4ad
   - python3-pyperclip.json
   - python3-mpwalg.json
   - name: wl-clipboard
