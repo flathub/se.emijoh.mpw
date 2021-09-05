@@ -11,7 +11,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/emiljoha/mpw.git
-        commit: f969d7a3f09e77c89e16b772d3f46b11c0fa6fcc
+        tag: v2021.9.5
+        commit: 130b4a7d6c5f7096458bf81600bfcdccf01aa4ad
   - python3-pyperclip.json
   - python3-mpwalg.json
   - name: wl-clipboard

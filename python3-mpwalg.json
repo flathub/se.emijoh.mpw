@@ -12,8 +12,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/71/2e/ac2352ebebe1561b191603dcc58f370d9faf5281cb255794453dd9f6391b/mpwalg-0.2.2.tar.gz",
-            "sha256": "3b9403ab885c8846088ba21e832e36a41cebd0b438c18fededb93a4344954e3e"
+            "url": "https://files.pythonhosted.org/packages/b1/ff/70d3db6c01a5ab65e84be33765fd6d6c77613c8d33b07c0a50a133a1a140/mpwalg-0.2.3.tar.gz",
+            "sha256": "21796ba36b0be757a41506a86672cdc114268048148dedaed35a6c7dc48d73c6"
         }
     ]
 }
