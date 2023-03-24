@@ -1,18 +1,13 @@
 app-id: se.emijoh.mpw
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: mpwcli.py
+finish-args:
+  - --socket=fallback-x11
+  - --share=ipc
+  - --socket=wayland
 modules:
-  - name: mpwcli
-    buildsystem: simple
-    build-commands:
-      - install -D mpwcli.py /app/bin/mpwcli.py
-    sources:
-      - type: git
-        url: https://github.com/emiljoha/mpw.git
-        tag: v2021.9.5
-        commit: 130b4a7d6c5f7096458bf81600bfcdccf01aa4ad
   - python3-pyperclip.json
   - python3-mpwalg.json
   - name: wl-clipboard
@@ -34,7 +29,13 @@ modules:
         url: https://github.com/astrand/xclip/archive/0.13.tar.gz
         sha256:
           ca5b8804e3c910a66423a882d79bf3c9450b875ac8528791fb60ec9de667f758
-finish-args:
-  - --socket=fallback-x11
-  - --share=ipc
-  - --socket=wayland
+  - name: mpwcli
+    buildsystem: simple
+    build-commands:
+      - install -D mpwcli.py /app/bin/mpwcli.py
+      - install -Dm655 se.emijoh.mpw.metainfo.xml -t /app/share/metainfo
+    sources:
+      - type: git
+        url: https://github.com/emiljoha/mpw.git
+        tag: v2021.9.5
+        commit: 130b4a7d6c5f7096458bf81600bfcdccf01aa4ad
