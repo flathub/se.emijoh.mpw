@@ -1,40 +1,19 @@
 app-id: se.emijoh.mpw
-runtime: org.gnome.Platform
-runtime-version: '42'
-sdk: org.gnome.Sdk
-command: mpwcli.py
+runtime: org.freedesktop.Platform
+runtime-version: "23.08"
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.golang
+command: mpw
 modules:
-  - name: mpwcli
+  - name: mpw
     buildsystem: simple
     build-commands:
-      - install -D mpwcli.py /app/bin/mpwcli.py
+      - cd go && /usr/lib/sdk/golang/bin/go build -v .
+      - install -D go/mpw /app/bin/mpw
+      - install -Dm655 se.emijoh.mpw.metainfo.xml -t /app/share/metainfo
     sources:
       - type: git
         url: https://github.com/emiljoha/mpw.git
-        tag: v2021.9.5
-        commit: 130b4a7d6c5f7096458bf81600bfcdccf01aa4ad
-  - python3-pyperclip.json
-  - python3-mpwalg.json
-  - name: wl-clipboard
-    buildsystem: meson
-    sources:
-      - type: archive
-        url: https://github.com/bugaevc/wl-clipboard/archive/v2.0.0.tar.gz
-        sha256: 2c42f182432adabe56da0f1144d5fcc40b7aae3d8e14d2bc4dc4c3f91b51808d
-  - name: libXmu
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://github.com/freedesktop/libXmu/archive/libXmu-1.1.2.tar.gz
-        sha256: fb1485a0ffcc360c0cc8fe18f54a2f49af6fc384da743c0b136ab99cc6c6e54c
-  - name: xsel
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://github.com/astrand/xclip/archive/0.13.tar.gz
-        sha256:
-          ca5b8804e3c910a66423a882d79bf3c9450b875ac8528791fb60ec9de667f758
-finish-args:
-  - --socket=fallback-x11
-  - --share=ipc
-  - --socket=wayland
+        tag: v2024.01.14
+        commit: 911d36b5726f44dba6e2a80213b4cc3accd019fe
