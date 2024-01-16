@@ -15,4 +15,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/emiljoha/mpw.git
-        commit: f9294803a178e1efb07de1003e08342fc7c1a40e
+        commit: 875a44b71b78c39703bf03a00a1d357afe2680af
